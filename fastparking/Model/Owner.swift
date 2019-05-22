@@ -9,7 +9,6 @@
 import Foundation
 
 class Owner:Codable {
-    // Atributes
     var id: Int
     var fullName:String?
     var address:String?
