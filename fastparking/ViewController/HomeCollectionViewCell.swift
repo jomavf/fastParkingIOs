@@ -19,7 +19,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     func update(owner:Owner){
         mainImageView.image = UIImage(named: "no-available")
-        print("\(owner.id), \(owner.imageUrl as Optional)")
         availabilityLabel.layer.masksToBounds = true
         availabilityLabel.layer.cornerRadius = 6
         if owner.isAvailable! {
@@ -29,11 +28,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
             availabilityLabel.layer.backgroundColor = UIColor.red.cgColor
             availabilityLabel.text = "No Disponible"
         }
-        if owner.imageUrl != nil {
-            mainImageView.setImageFrom(urlString: owner.imageUrl!, withDefaultNamed: "no-available", withErrorNamed: "no-available")
+        if owner.urlImage != nil {
+            mainImageView.setImageFrom(urlString: owner.urlImage!, withDefaultNamed: "no-available", withErrorNamed: "no-available")
         }
-        fullNameLabel.text = owner.fullName
-        descriptionLabel.text = owner.description
+        fullNameLabel.text = owner.fullName!
+        if let description = owner.description {
+            descriptionLabel.text = owner.description!
+        }
+        
         priceLabel.text = "$\(11) per hour"
         slotsLabel.text = "Slots: \(String(owner.slotsQuantity!))"
     }

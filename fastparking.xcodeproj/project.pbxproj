@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1495D022A978D30001B942 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1495CF22A978D30001B942 /* MapKit.framework */; };
+		2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D122A97A3C0001B942 /* ViewController.swift */; };
+		2C1495D522A97D3D0001B942 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D422A97D3D0001B942 /* Place.swift */; };
+		2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D822AA29890001B942 /* fastParkingAPI.swift */; };
 		2CA65D6122947AE000D7E9A8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */; };
 		2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D672294A52900D7E9A8 /* Owner.swift */; };
 		2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6A2294A90E00D7E9A8 /* data.swift */; };
@@ -18,9 +22,14 @@
 		40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC51228DB5A90099378D /* fastparking.xcdatamodeld */; };
 		40C4AC55228DB5AB0099378D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC54228DB5AB0099378D /* Assets.xcassets */; };
 		40C4AC58228DB5AB0099378D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC56228DB5AB0099378D /* LaunchScreen.storyboard */; };
+		433C146E9E9321D31BDD4061 /* Pods_fastparking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE6A461FAA3BBF9E16F90F /* Pods_fastparking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C1495CF22A978D30001B942 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C1495D122A97A3C0001B942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C1495D422A97D3D0001B942 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		2C1495D822AA29890001B942 /* fastParkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastParkingAPI.swift; sourceTree = "<group>"; };
 		2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA65D672294A52900D7E9A8 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2CA65D6A2294A90E00D7E9A8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -34,6 +43,9 @@
 		40C4AC54228DB5AB0099378D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4AC57228DB5AB0099378D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40C4AC59228DB5AB0099378D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F369D5E447E94E38A463417 /* Pods-fastparking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastparking.debug.xcconfig"; path = "Target Support Files/Pods-fastparking/Pods-fastparking.debug.xcconfig"; sourceTree = "<group>"; };
+		8666740321BEBDC0160DE243 /* Pods-fastparking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastparking.release.xcconfig"; path = "Target Support Files/Pods-fastparking/Pods-fastparking.release.xcconfig"; sourceTree = "<group>"; };
+		FDBE6A461FAA3BBF9E16F90F /* Pods_fastparking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastparking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +53,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1495D022A978D30001B942 /* MapKit.framework in Frameworks */,
+				433C146E9E9321D31BDD4061 /* Pods_fastparking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1495D722AA25060001B942 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2C1495D822AA29890001B942 /* fastParkingAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		2CA65D692294A8F900D7E9A8 /* Mockdata */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +93,8 @@
 				2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */,
 				2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */,
 				2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */,
+				2C1495D122A97A3C0001B942 /* ViewController.swift */,
+				2C1495D422A97D3D0001B942 /* Place.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -98,6 +122,8 @@
 			children = (
 				40C4AC49228DB5A90099378D /* fastparking */,
 				40C4AC48228DB5A90099378D /* Products */,
+				6EF20F62AF13248947C7A846 /* Pods */,
+				4CC27CED652AFF22C9C366D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +138,7 @@
 		40C4AC49228DB5A90099378D /* fastparking */ = {
 			isa = PBXGroup;
 			children = (
+				2C1495D722AA25060001B942 /* Networking */,
 				2CA65D712294ADD700D7E9A8 /* Main */,
 				2CA65D702294ADB200D7E9A8 /* Resource */,
 				2CA65D6F2294ADA600D7E9A8 /* ViewController */,
@@ -122,6 +149,24 @@
 			path = fastparking;
 			sourceTree = "<group>";
 		};
+		4CC27CED652AFF22C9C366D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C1495CF22A978D30001B942 /* MapKit.framework */,
+				FDBE6A461FAA3BBF9E16F90F /* Pods_fastparking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EF20F62AF13248947C7A846 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F369D5E447E94E38A463417 /* Pods-fastparking.debug.xcconfig */,
+				8666740321BEBDC0160DE243 /* Pods-fastparking.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40C4AC5C228DB5AB0099378D /* Build configuration list for PBXNativeTarget "fastparking" */;
 			buildPhases = (
+				43DB80613BD49EB6E9FE1BEE /* [CP] Check Pods Manifest.lock */,
 				40C4AC43228DB5A90099378D /* Sources */,
 				40C4AC44228DB5A90099378D /* Frameworks */,
 				40C4AC45228DB5A90099378D /* Resources */,
+				83C2C2D69CFDEADB13ED77F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +201,11 @@
 				TargetAttributes = {
 					40C4AC46228DB5A90099378D = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -188,6 +240,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43DB80613BD49EB6E9FE1BEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fastparking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83C2C2D69CFDEADB13ED77F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fastparking/Pods-fastparking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fastparking/Pods-fastparking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fastparking/Pods-fastparking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		40C4AC43228DB5A90099378D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -196,11 +290,14 @@
 				40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */,
 				2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */,
 				40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */,
+				2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */,
 				2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */,
 				2CA65D6122947AE000D7E9A8 /* HomeCollectionViewCell.swift in Sources */,
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,
+				2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */,
 				2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */,
+				2C1495D522A97D3D0001B942 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +441,7 @@
 		};
 		40C4AC5D228DB5AB0099378D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F369D5E447E94E38A463417 /* Pods-fastparking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +460,7 @@
 		};
 		40C4AC5E228DB5AB0099378D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8666740321BEBDC0160DE243 /* Pods-fastparking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

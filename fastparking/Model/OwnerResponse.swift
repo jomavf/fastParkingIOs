@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OwnerResponse: Codable {
+struct OwnerResponse: Codable {
     var status: String?
     var owners: [Owner]?
     var totalResults:Int?

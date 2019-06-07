@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -18,20 +19,24 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
         colView.delegate = self
         colView.dataSource = self
-        loadOwners()
+        fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
+//        loadOwners()
         self.colView.reloadData()
         // Do any additional setup after loading the view.
     }
     
-    func loadOwners()->Void {
-        let ownerDecoder = JSONDecoder()
-        do {
-            let ownerResult = try ownerDecoder.decode(OwnerResponse.self, from: ownerResponse!)
-            owners = ownerResult.owners!
+    func responseHandler(data:OwnerResponse) {
+        if data.owners != nil {
+            self.owners = data.owners!
+            self.colView.reloadData()
+        } else {
+            print("No data or problems with responseHandler function")
         }
-        catch {
-            print("Failed to load owners: \(error.localizedDescription)")
-        }
+    }
+    
+    func errorHandler(error:Error) {
+        let message="Error on sources request: \(error.localizedDescription)"
+        print(message)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

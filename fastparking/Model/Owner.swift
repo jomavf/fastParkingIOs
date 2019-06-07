@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Owner:Codable {
+struct Owner:Codable {
     var id: Int
     var fullName:String?
     var address:String?
@@ -19,19 +19,29 @@ class Owner:Codable {
     var description:String?
     var email:String?
     var password:String?
-    var imageUrl:String?
-    init(id:Int,fullName:String?,address:String?,slotsQuantity:Int?,isAvailable:Bool?,ruc:String?,birthday:String?,description:String?,email:String?,password:String?,imageUrl:String?){
-        self.id = id
-        self.fullName = fullName
-        self.address = address
-        self.slotsQuantity = slotsQuantity
-        self.isAvailable = isAvailable
-        self.ruc = ruc
-        self.birthday = birthday
-        self.description = description
-        self.email = email
-        self.password = password
-        self.imageUrl = imageUrl
-    }
+    var latitude:Double?
+    var longitude:Double?
+    var distance:String?
+    var duration:String?
+    var rating:Float?
+    var urlImage:String?
+    
+//    enum CodingKeys:String,CodingKey {
+//        case name = "title"
+//        case foundingYear = "founding_date"
+//    }
+//    init(id:Int,fullName:String?,address:String?,slotsQuantity:Int?,isAvailable:Bool?,ruc:String?,birthday:String?,description:String?,email:String?,password:String?,imageUrl:String?){
+//        self.id = id
+//        self.fullName = fullName
+//        self.address = address
+//        self.slotsQuantity = slotsQuantity
+//        self.isAvailable = isAvailable
+//        self.ruc = ruc
+//        self.birthday = birthday
+//        self.description = description
+//        self.email = email
+//        self.password = password
+//        self.imageUrl = imageUrl
+//    }
     
 }

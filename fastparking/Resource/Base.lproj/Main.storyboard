@@ -13,7 +13,7 @@
         <!--Maps-->
         <scene sceneID="l6I-QR-HNt">
             <objects>
-                <viewController id="4jm-Rb-8yO" sceneMemberID="viewController">
+                <viewController id="4jm-Rb-8yO" customClass="ViewController" customModule="fastparking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nmW-ZU-Qub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="7uN-ss-Jmp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Maps" id="RsF-Tp-qoW"/>
+                    <connections>
+                        <outlet property="mapView" destination="8Id-bM-3Tt" id="cwt-a7-ibK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SS7-0V-1GA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
