@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class OwnerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var availabilityLabel: UILabel!
@@ -33,7 +33,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
         fullNameLabel.text = owner.fullName!
         if let description = owner.description {
-            descriptionLabel.text = owner.description!
+            descriptionLabel.text = description
         }
         
         priceLabel.text = "$\(11) per hour"

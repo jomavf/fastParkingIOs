@@ -20,9 +20,7 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
         colView.delegate = self
         colView.dataSource = self
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
-//        loadOwners()
         self.colView.reloadData()
-        // Do any additional setup after loading the view.
     }
     
     func responseHandler(data:OwnerResponse) {
@@ -48,22 +46,12 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!OwnerCollectionViewCell
         
         // Configure the cell
         let selectedOwner = owners[indexPath.row]
         cell.update(owner: selectedOwner )
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

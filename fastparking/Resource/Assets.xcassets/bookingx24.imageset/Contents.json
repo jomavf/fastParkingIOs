@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "placeholder.png",
+      "filename" : "bookingx24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "placeholder-48.png",
+      "filename" : "bookingx48.png",
       "scale" : "2x"
     },
     {

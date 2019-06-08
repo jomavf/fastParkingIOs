@@ -11,7 +11,12 @@
 		2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D122A97A3C0001B942 /* ViewController.swift */; };
 		2C1495D522A97D3D0001B942 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D422A97D3D0001B942 /* Place.swift */; };
 		2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495D822AA29890001B942 /* fastParkingAPI.swift */; };
-		2CA65D6122947AE000D7E9A8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */; };
+		2C1495DB22AADD3C0001B942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495DA22AADD3C0001B942 /* LoginViewController.swift */; };
+		2C149BB922AB41CA0023A483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C149BB822AB41CA0023A483 /* Assets.xcassets */; };
+		2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBA22AB5D230023A483 /* LoginResponse.swift */; };
+		2C149BBD22AB60150023A483 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBC22AB60150023A483 /* Customer.swift */; };
+		2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBE22ABAE050023A483 /* SettingsViewController.swift */; };
+		2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */; };
 		2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D672294A52900D7E9A8 /* Owner.swift */; };
 		2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6A2294A90E00D7E9A8 /* data.swift */; };
 		2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */; };
@@ -20,7 +25,6 @@
 		40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC4A228DB5A90099378D /* AppDelegate.swift */; };
 		40C4AC50228DB5A90099378D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC4E228DB5A90099378D /* Main.storyboard */; };
 		40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC51228DB5A90099378D /* fastparking.xcdatamodeld */; };
-		40C4AC55228DB5AB0099378D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC54228DB5AB0099378D /* Assets.xcassets */; };
 		40C4AC58228DB5AB0099378D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC56228DB5AB0099378D /* LaunchScreen.storyboard */; };
 		433C146E9E9321D31BDD4061 /* Pods_fastparking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE6A461FAA3BBF9E16F90F /* Pods_fastparking.framework */; };
 /* End PBXBuildFile section */
@@ -30,7 +34,12 @@
 		2C1495D122A97A3C0001B942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C1495D422A97D3D0001B942 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		2C1495D822AA29890001B942 /* fastParkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastParkingAPI.swift; sourceTree = "<group>"; };
-		2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C1495DA22AADD3C0001B942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2C149BB822AB41CA0023A483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C149BBA22AB5D230023A483 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		2C149BBC22AB60150023A483 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		2C149BBE22ABAE050023A483 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA65D672294A52900D7E9A8 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2CA65D6A2294A90E00D7E9A8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerResponse.swift; sourceTree = "<group>"; };
@@ -40,7 +49,6 @@
 		40C4AC4A228DB5A90099378D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C4AC4F228DB5A90099378D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C4AC52228DB5A90099378D /* fastparking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fastparking.xcdatamodel; sourceTree = "<group>"; };
-		40C4AC54228DB5AB0099378D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4AC57228DB5AB0099378D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40C4AC59228DB5AB0099378D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F369D5E447E94E38A463417 /* Pods-fastparking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastparking.debug.xcconfig"; path = "Target Support Files/Pods-fastparking/Pods-fastparking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,9 +88,12 @@
 		2CA65D6C2294ACE800D7E9A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C1495D422A97D3D0001B942 /* Place.swift */,
 				40C4AC51228DB5A90099378D /* fastparking.xcdatamodeld */,
 				2CA65D672294A52900D7E9A8 /* Owner.swift */,
 				2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */,
+				2C149BBA22AB5D230023A483 /* LoginResponse.swift */,
+				2C149BBC22AB60150023A483 /* Customer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,11 +101,12 @@
 		2CA65D6F2294ADA600D7E9A8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2CA65D6022947AE000D7E9A8 /* HomeCollectionViewCell.swift */,
+				2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */,
 				2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */,
 				2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */,
 				2C1495D122A97A3C0001B942 /* ViewController.swift */,
-				2C1495D422A97D3D0001B942 /* Place.swift */,
+				2C1495DA22AADD3C0001B942 /* LoginViewController.swift */,
+				2C149BBE22ABAE050023A483 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -102,9 +114,9 @@
 		2CA65D702294ADB200D7E9A8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				40C4AC54228DB5AB0099378D /* Assets.xcassets */,
 				40C4AC4E228DB5A90099378D /* Main.storyboard */,
 				40C4AC56228DB5AB0099378D /* LaunchScreen.storyboard */,
+				2C149BB822AB41CA0023A483 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -233,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C4AC58228DB5AB0099378D /* LaunchScreen.storyboard in Resources */,
-				40C4AC55228DB5AB0099378D /* Assets.xcassets in Resources */,
+				2C149BB922AB41CA0023A483 /* Assets.xcassets in Resources */,
 				40C4AC50228DB5A90099378D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1495DB22AADD3C0001B942 /* LoginViewController.swift in Sources */,
+				2C149BBD22AB60150023A483 /* Customer.swift in Sources */,
 				40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */,
 				2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */,
 				40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */,
 				2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */,
 				2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */,
-				2CA65D6122947AE000D7E9A8 /* HomeCollectionViewCell.swift in Sources */,
+				2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */,
+				2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */,
+				2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */,
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,
 				2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */,
