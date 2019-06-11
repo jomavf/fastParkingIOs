@@ -12,6 +12,7 @@ import Alamofire
 class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var owners: [Owner] = []
+    var index = 0
     
     @IBOutlet weak var colView: UICollectionView!
     
@@ -37,6 +38,14 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
         print(message)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? DetailsViewController
+        if vc != nil {
+            vc!.object = self.owners[index]
+        }
+        
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -47,9 +56,9 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!OwnerCollectionViewCell
-        
         // Configure the cell
-        let selectedOwner = owners[indexPath.row]
+        index = indexPath.row
+        let selectedOwner = owners[index]
         cell.update(owner: selectedOwner )
         return cell
     }

@@ -16,6 +16,7 @@
 		2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBA22AB5D230023A483 /* LoginResponse.swift */; };
 		2C149BBD22AB60150023A483 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBC22AB60150023A483 /* Customer.swift */; };
 		2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBE22ABAE050023A483 /* SettingsViewController.swift */; };
+		2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */; };
 		2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */; };
 		2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D672294A52900D7E9A8 /* Owner.swift */; };
 		2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6A2294A90E00D7E9A8 /* data.swift */; };
@@ -39,6 +40,7 @@
 		2C149BBA22AB5D230023A483 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		2C149BBC22AB60150023A483 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		2C149BBE22ABAE050023A483 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA65D672294A52900D7E9A8 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2CA65D6A2294A90E00D7E9A8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				2C1495D122A97A3C0001B942 /* ViewController.swift */,
 				2C1495DA22AADD3C0001B942 /* LoginViewController.swift */,
 				2C149BBE22ABAE050023A483 /* SettingsViewController.swift */,
+				2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */,
 				2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */,
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
+				2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,
 				2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */,
 				2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */,

@@ -10,8 +10,10 @@ import Foundation
 import Alamofire
 
 class fastParkingAPI {
+    static let fakeUrl = "http://127.0.0.1:3000"
+    
     static let baseUrl = "http://fastparking.gearhostpreview.com/FastParking/v1"
-    static let ownerUrl = "\(baseUrl)/owners"
+    static let ownerUrl = "\(fakeUrl)/owners"
     static let loginUrl = "\(baseUrl)/login/authenticate"
     
     static private func get<T:Decodable>(
@@ -25,7 +27,7 @@ class fastParkingAPI {
             print(message)
             return
         }
-        AF.request(url,parameters:parameters).validate().responseJSON { (response) in
+        AF.request(url,parameters:parameters).responseJSON { (response) in
             switch response.result {
             case .success(_):
                 do {
