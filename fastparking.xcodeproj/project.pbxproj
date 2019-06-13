@@ -14,9 +14,18 @@
 		2C1495DB22AADD3C0001B942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1495DA22AADD3C0001B942 /* LoginViewController.swift */; };
 		2C149BB922AB41CA0023A483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C149BB822AB41CA0023A483 /* Assets.xcassets */; };
 		2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBA22AB5D230023A483 /* LoginResponse.swift */; };
-		2C149BBD22AB60150023A483 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBC22AB60150023A483 /* Customer.swift */; };
 		2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BBE22ABAE050023A483 /* SettingsViewController.swift */; };
 		2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */; };
+		2C439AB422B158EB0005E837 /* CreateOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AB322B158EB0005E837 /* CreateOwnerViewController.swift */; };
+		2C439AB622B1619E0005E837 /* PostOwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AB522B1619E0005E837 /* PostOwnerResponse.swift */; };
+		2C439AB822B187C50005E837 /* RegisterCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AB722B187C50005E837 /* RegisterCustomerViewController.swift */; };
+		2C439ABE22B18D530005E837 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439ABD22B18D530005E837 /* Customer.swift */; };
+		2C439AC022B18D8E0005E837 /* CustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439ABF22B18D8E0005E837 /* CustomerResponse.swift */; };
+		2C439AC222B194FE0005E837 /* ReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC122B194FE0005E837 /* ReservationResponse.swift */; };
+		2C439AC422B195A10005E837 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC322B195A10005E837 /* Reservation.swift */; };
+		2C439AC622B196BB0005E837 /* SlotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC522B196BB0005E837 /* SlotResponse.swift */; };
+		2C439AC822B196CC0005E837 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC722B196CC0005E837 /* Slot.swift */; };
+		2C439ACB22B1B7110005E837 /* SettingsOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */; };
 		2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */; };
 		2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D672294A52900D7E9A8 /* Owner.swift */; };
 		2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6A2294A90E00D7E9A8 /* data.swift */; };
@@ -38,9 +47,18 @@
 		2C1495DA22AADD3C0001B942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C149BB822AB41CA0023A483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C149BBA22AB5D230023A483 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		2C149BBC22AB60150023A483 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		2C149BBE22ABAE050023A483 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2C439AB322B158EB0005E837 /* CreateOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOwnerViewController.swift; sourceTree = "<group>"; };
+		2C439AB522B1619E0005E837 /* PostOwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOwnerResponse.swift; sourceTree = "<group>"; };
+		2C439AB722B187C50005E837 /* RegisterCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCustomerViewController.swift; sourceTree = "<group>"; };
+		2C439ABD22B18D530005E837 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		2C439ABF22B18D8E0005E837 /* CustomerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerResponse.swift; sourceTree = "<group>"; };
+		2C439AC122B194FE0005E837 /* ReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationResponse.swift; sourceTree = "<group>"; };
+		2C439AC322B195A10005E837 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		2C439AC522B196BB0005E837 /* SlotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotResponse.swift; sourceTree = "<group>"; };
+		2C439AC722B196CC0005E837 /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOwnerViewController.swift; sourceTree = "<group>"; };
 		2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA65D672294A52900D7E9A8 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2CA65D6A2294A90E00D7E9A8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -95,7 +113,13 @@
 				2CA65D672294A52900D7E9A8 /* Owner.swift */,
 				2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */,
 				2C149BBA22AB5D230023A483 /* LoginResponse.swift */,
-				2C149BBC22AB60150023A483 /* Customer.swift */,
+				2C439AB522B1619E0005E837 /* PostOwnerResponse.swift */,
+				2C439ABD22B18D530005E837 /* Customer.swift */,
+				2C439ABF22B18D8E0005E837 /* CustomerResponse.swift */,
+				2C439AC122B194FE0005E837 /* ReservationResponse.swift */,
+				2C439AC322B195A10005E837 /* Reservation.swift */,
+				2C439AC522B196BB0005E837 /* SlotResponse.swift */,
+				2C439AC722B196CC0005E837 /* Slot.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +134,9 @@
 				2C1495DA22AADD3C0001B942 /* LoginViewController.swift */,
 				2C149BBE22ABAE050023A483 /* SettingsViewController.swift */,
 				2C149BC022AC5B8D0023A483 /* DetailsViewController.swift */,
+				2C439AB322B158EB0005E837 /* CreateOwnerViewController.swift */,
+				2C439AB722B187C50005E837 /* RegisterCustomerViewController.swift */,
+				2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -302,18 +329,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C439AC422B195A10005E837 /* Reservation.swift in Sources */,
+				2C439ACB22B1B7110005E837 /* SettingsOwnerViewController.swift in Sources */,
 				2C1495DB22AADD3C0001B942 /* LoginViewController.swift in Sources */,
-				2C149BBD22AB60150023A483 /* Customer.swift in Sources */,
+				2C439AC222B194FE0005E837 /* ReservationResponse.swift in Sources */,
+				2C439AC622B196BB0005E837 /* SlotResponse.swift in Sources */,
 				40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */,
 				2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */,
+				2C439AB622B1619E0005E837 /* PostOwnerResponse.swift in Sources */,
+				2C439AC822B196CC0005E837 /* Slot.swift in Sources */,
 				40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */,
 				2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */,
 				2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */,
 				2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */,
 				2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */,
 				2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */,
+				2C439AC022B18D8E0005E837 /* CustomerResponse.swift in Sources */,
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
 				2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */,
+				2C439AB422B158EB0005E837 /* CreateOwnerViewController.swift in Sources */,
+				2C439ABE22B18D530005E837 /* Customer.swift in Sources */,
+				2C439AB822B187C50005E837 /* RegisterCustomerViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,
 				2C1495D922AA29890001B942 /* fastParkingAPI.swift in Sources */,
 				2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */,

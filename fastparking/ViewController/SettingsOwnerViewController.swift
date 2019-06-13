@@ -1,32 +1,29 @@
 //
-//  SettingsViewController.swift
+//  SettingsOwnerViewController.swift
 //  fastparking
 //
-//  Created by Jose Veliz on 6/8/19.
+//  Created by Jose Veliz on 6/12/19.
 //  Copyright © 2019 Jose Veliz. All rights reserved.
 //
 
 import UIKit
 import SwiftKeychainWrapper
 
-class SettingsViewController: UIViewController {
-    
-    
+class SettingsOwnerViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func goToLogin(_ sender: Any) {
-        print("EXE")
+    
+    @IBAction func signoutTapped(_ sender: Any) {
         let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         if let loginViewController = (mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController) {
             self.present(loginViewController, animated: true, completion: clearToken)
         }
     }
-    
     func clearToken() {
         let _: Bool = KeychainWrapper.standard.removeObject(forKey: "token")
     }

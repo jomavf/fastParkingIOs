@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class DetailsViewController: UIViewController {
-    
+    let dispatchGroup = DispatchGroup()
     var object: Owner?
     
     private var destination: MKPointAnnotation?
@@ -34,13 +34,15 @@ class DetailsViewController: UIViewController {
         mapView.delegate = self
         
         configureLocationServices()
+        dispatchGroup.enter()
         loadComponents()
         // Do any additional setup after loading the view.
     }
     
     func loadComponents() {
+        
         if object != nil {
-            if let urlImage = self.object!.urlImage {
+            if let urlImage = self.object!.imageUrl {
                 mainImageView.setImageFrom(urlString: urlImage, withDefaultNamed: "no-available", withErrorNamed: "no-available")
             }
             if let description = self.object!.description {
@@ -51,6 +53,7 @@ class DetailsViewController: UIViewController {
             farFromLabel.text = "12 Km."
             ratingLabel.text = "5"
         }
+        dispatchGroup.leave()
     }
     
     private func configureLocationServices() {
@@ -94,7 +97,6 @@ class DetailsViewController: UIViewController {
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation))
         guard let destination = destination else {return print("Problemas con destination")}
-        print("Aqui",userLocation,destination.coordinate,self.object)
         directionRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination.coordinate))
         directionRequest.requestsAlternateRoutes = true
         directionRequest.transportType = .automobile

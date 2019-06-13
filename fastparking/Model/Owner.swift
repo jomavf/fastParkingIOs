@@ -24,7 +24,26 @@ struct Owner:Codable {
     var distance:String?
     var duration:String?
     var rating:Float?
-    var urlImage:String?
+    var imageUrl:String?
+    
+//    {
+//        "id": 35,
+//        "fullName": "Jose",
+//        "address": "Av Parqueo",
+//        "slotsQuantity": 76,
+//        "isAvailable": null,
+//        "ruc": "70192348",
+//        "birthday": "2012-06-02T00:00:00",
+//        "description": "Descripcion de mi parqueo",
+//        "email": "jveliz2@gmail.com",
+//        "password": "jveliz2",
+//        "latitude": -12.0415716,
+//        "longitude": -77.03382,
+//        "distance": "23.3 km",
+//        "duration": "39 mins",
+//        "rating": 0,
+//        "imageUrl": null
+//    },
     
 //    enum CodingKeys:String,CodingKey {
 //        case name = "title"

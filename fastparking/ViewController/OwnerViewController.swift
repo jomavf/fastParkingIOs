@@ -18,6 +18,7 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Entre a cargar la data")
         colView.delegate = self
         colView.dataSource = self
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
@@ -27,6 +28,7 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     func responseHandler(data:OwnerResponse) {
         if data.owners != nil {
             self.owners = data.owners!
+            print(data.owners)
             self.colView.reloadData()
         } else {
             print("No data or problems with responseHandler function")

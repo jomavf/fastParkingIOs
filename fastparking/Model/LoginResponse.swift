@@ -19,4 +19,5 @@ struct LoginResponse: Codable {
     var code: Int?
     var token:String?
     var message:String?
+    var customer:Customer?
 }

@@ -11,10 +11,11 @@ import Alamofire
 
 class fastParkingAPI {
     static let fakeUrl = "http://127.0.0.1:3000"
-    
     static let baseUrl = "http://fastparking.gearhostpreview.com/FastParking/v1"
-    static let ownerUrl = "\(fakeUrl)/owners"
+    static let ownerUrl = "\(baseUrl)/owners?latitude=-11.87&longitude=-77.086"
     static let loginUrl = "\(baseUrl)/login/authenticate"
+    static let ownerUrlPost = "\(baseUrl)/owners"
+    static let customerUrl = "\(baseUrl)/customers"
     
     static private func get<T:Decodable>(
         urlString:String,
@@ -47,7 +48,7 @@ class fastParkingAPI {
     
     static private func post<T:Decodable>(
         urlString:String,
-        parameters: [String:String],
+        parameters: [String:Any],
         responseHandler: @escaping (T) -> Void,
         errorHandler: @escaping (Error) -> Void
         ){
@@ -82,5 +83,13 @@ class fastParkingAPI {
     static func loginRequest(parameter:[String:String], responseHandler: @escaping (LoginResponse)->Void,errorHandler: @escaping (Error)->Void){
         self.post(urlString: loginUrl, parameters: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
     }
+    
+    static func postOwners(parameter:[String:Any], responseHandler: @escaping (PostOwnerResponse)->Void,errorHandler: @escaping (Error)->Void){
+        self.post(urlString: ownerUrlPost, parameters: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
+    }
+    static func postCustomer(parameter:[String:Any], responseHandler: @escaping (CustomerResponse)->Void,errorHandler: @escaping (Error)->Void){
+        self.post(urlString: customerUrl, parameters: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
+    }
+    
 }
 

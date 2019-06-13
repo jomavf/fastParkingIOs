@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
 
 //    let semaphore = DispatchSemaphore(value: 0)
     let dispatchGroup = DispatchGroup()
+    var isCustomer:Bool?
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -33,9 +34,16 @@ class LoginViewController: UIViewController {
         
         dispatchGroup.notify(queue: .main) {
             if self.isLogin() {
-                if let tabbar = (mainStoryBoard.instantiateViewController(withIdentifier: "tabbar") as? UITabBarController) {
-                    self.present(tabbar, animated: true, completion: nil)
+                if self.isCustomer == true {
+                    if let tabbar = (mainStoryBoard.instantiateViewController(withIdentifier: "tabbar") as? UITabBarController) {
+                        self.present(tabbar, animated: true, completion: nil)
+                    }
+                } else {
+                    if let tabbarOwner = (mainStoryBoard.instantiateViewController(withIdentifier: "tabbarOwner") as? UITabBarController) {
+                        self.present(tabbarOwner, animated: true, completion: nil)
+                    }
                 }
+                
             }
         }
     }
@@ -55,6 +63,12 @@ class LoginViewController: UIViewController {
     }
     
     func responseHandler(response: LoginResponse) {
+        if let _ = response.customer {
+            isCustomer = true // es customer
+        }
+        else {
+            isCustomer = false // es owner
+        }
         if let token = response.token {
             let _: Bool = KeychainWrapper.standard.set(token, forKey: "token")
             dispatchGroup.leave()

@@ -26,8 +26,8 @@ class OwnerCollectionViewCell: UICollectionViewCell {
         } else {
             availabilityLabel.text = "No Disponible"
         }
-        if owner.urlImage != nil {
-            mainImageView.setImageFrom(urlString: owner.urlImage!, withDefaultNamed: "no-available", withErrorNamed: "no-available")
+        if owner.imageUrl != nil {
+            mainImageView.setImageFrom(urlString: owner.imageUrl!, withDefaultNamed: "no-available", withErrorNamed: "no-available")
         }
         fullNameLabel.text = owner.fullName!
         priceLabel.text = "$\(11) per hour"
