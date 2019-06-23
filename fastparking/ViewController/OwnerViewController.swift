@@ -11,35 +11,45 @@ import Alamofire
 
 class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
+    var dispatchGroup = DispatchGroup()
+    
     var owners: [Owner] = []
     var index = 0
+    var loading:Bool = false
     
-//    @IBOutlet weak var colView: UICollectionView!
     @IBOutlet weak var colView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Entre a cargar la data")
         colView.delegate = self
         colView.dataSource = self
+        
+        loading = true
+        
+        dispatchGroup.enter()
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
-        self.colView.reloadData()
+        
+        dispatchGroup.notify(queue: .main) {
+            self.loading = false
+            self.colView.reloadData()
+        }
     }
     
     func responseHandler(data:OwnerResponse) {
         if data.owners != nil {
             self.owners = data.owners!
-            print(data.owners)
             self.colView.reloadData()
+            dispatchGroup.leave()
         } else {
             print("No data or problems with responseHandler function")
+            dispatchGroup.leave()
         }
     }
     
     func errorHandler(error:Error) {
         let message="Error on sources request: \(error.localizedDescription)"
         print(message)
+        dispatchGroup.leave()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -32,12 +32,16 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         configureLocationServices()
-        dispatchGroup.enter()
+        
         loadComponents()
-        // Do any additional setup after loading the view.
+        dispatchGroup.notify(queue: .main){
+            // things we want to do next
+            // code should be HERE
+        }
     }
     
     func loadComponents() {
+        dispatchGroup.enter()
         if let name = object?.fullName {self.title = name}
         if let image = object?.imageUrl {
             mainImageView.setImageFrom(urlString: image, withDefaultNamed: "no-available", withErrorNamed: "no-available")
@@ -114,7 +118,6 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Ultima ubicacion")
         guard let latestLocation = locations.first else {return}
         
         if currentCoordinate == nil {
@@ -127,7 +130,6 @@ extension DetailsViewController : CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("status changed")
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             beginLocationUpdates(locationManager: manager)
         }

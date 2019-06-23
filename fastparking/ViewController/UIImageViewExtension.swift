@@ -5,7 +5,6 @@
 //  Created by Jose Veliz on 5/22/19.
 //  Copyright © 2019 Jose Veliz. All rights reserved.
 //
-
 import Foundation
 import UIKit
 import os
@@ -14,8 +13,8 @@ extension UIImageView{
     func setImageFrom(urlString: String, withDefaultNamed defaultName: String?,
                       withErrorNamed errorImage: String?){
         guard let url = URL(string: urlString)else{
-            let message="Error while creating URL, default image assigned"
-            os_log("%@",message)
+            _="Error while creating URL, default image assigned"
+            //print(message)
             DispatchQueue.main.async {
                 if let name=defaultName{
                     self.image=UIImage(named: name)
@@ -31,8 +30,8 @@ extension UIImageView{
                 let data=data,
                 error==nil,
                 let image=UIImage(data: data)else{
-                    let message="Error while requesting image, error image assigned"
-                    os_log("%@",message )
+                    _="Error while requesting image, error image assigned"
+                    //print(message )
                     DispatchQueue.main.async {
                         if let name=errorImage{
                             self.image=UIImage(named: name)
@@ -42,8 +41,8 @@ extension UIImageView{
             }
             DispatchQueue.main.async {
                 self.image=image
-                let message="Succesful request, image assigned"
-                os_log("%@",message)
+                _="Succesful request, image assigned"
+                //print(message)
             }
             }.resume()
     }

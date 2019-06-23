@@ -441,41 +441,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aun no tienes un local creado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-vg-5gs">
-                                <rect key="frame" x="75" y="395.66666666666669" width="225" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP6-Js-Moi">
                                 <rect key="frame" x="0.0" y="140" width="375" height="589"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no-available" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-UY-y2Z">
-                                        <rect key="frame" x="20" y="168" width="374" height="149"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="El nombre completo de tu garage o local como lo llames" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-Wz-5Tv">
-                                        <rect key="frame" x="20" y="44" width="374" height="116"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INFORMACION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-dM-1TL">
-                                        <rect key="frame" x="20" y="16" width="114" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" white="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BN8-Pf-efR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFORMACION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-dM-1TL">
+                                                <rect key="frame" x="130.66666666666666" y="0.0" width="113.66666666666666" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" white="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El nombre completo de tu garage o local, como lo llames" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-Wz-5Tv">
+                                                <rect key="frame" x="19.333333333333343" y="39" width="336.33333333333326" height="292"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-available" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-UY-y2Z">
+                                                <rect key="frame" x="0.0" y="339" width="375" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="tGB-j5-ycO"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BN8-Pf-efR" secondAttribute="bottom" id="ILf-c3-jPP"/>
+                                    <constraint firstItem="BN8-Pf-efR" firstAttribute="leading" secondItem="YP6-Js-Moi" secondAttribute="leading" id="UFG-UG-K3E"/>
+                                    <constraint firstItem="BN8-Pf-efR" firstAttribute="top" secondItem="YP6-Js-Moi" secondAttribute="top" id="YCv-yw-1aM"/>
+                                    <constraint firstAttribute="trailing" secondItem="BN8-Pf-efR" secondAttribute="trailing" id="ajq-Sh-IiX"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hCr-vg-5gs" firstAttribute="centerX" secondItem="MYU-Iv-xY3" secondAttribute="centerX" id="4vf-NA-CWB"/>
-                            <constraint firstItem="hCr-vg-5gs" firstAttribute="centerY" secondItem="MYU-Iv-xY3" secondAttribute="centerY" id="9nY-ad-Kz8"/>
                             <constraint firstItem="YP6-Js-Moi" firstAttribute="leading" secondItem="9lc-HX-8Aj" secondAttribute="leading" id="CLN-a0-wv3"/>
                             <constraint firstItem="YP6-Js-Moi" firstAttribute="top" secondItem="9lc-HX-8Aj" secondAttribute="top" id="nh3-9z-hDW"/>
                             <constraint firstItem="9lc-HX-8Aj" firstAttribute="trailing" secondItem="YP6-Js-Moi" secondAttribute="trailing" id="p0L-1a-4AR"/>

@@ -75,7 +75,6 @@ class CreateOwnerViewController: UIViewController {
     }
     
     func responseHandler(response: PostOwnerResponse) {
-        print(response)
         dispatchGroup.leave()
     }
     

@@ -20,7 +20,6 @@ class SettingsViewController: UIViewController {
     
 
     @IBAction func goToLogin(_ sender: Any) {
-        print("EXE")
         let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         if let loginViewController = (mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController) {
             self.present(loginViewController, animated: true, completion: clearToken)

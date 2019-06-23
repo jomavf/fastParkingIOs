@@ -25,7 +25,6 @@ class OwnerCollectionViewCell: UICollectionViewCell {
     
     
     func update(owner:Owner){
-        print("OWNER: ",owner)
         
         guard let isAvailable = owner.isAvailable,
             let fullname = owner.fullName,

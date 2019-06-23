@@ -57,7 +57,7 @@ class RegisterCustomerViewController: UIViewController {
     }
     
     func responseHandler(response: CustomerResponse) {
-        print(response)
+//        print(response)
         dispatchGroup.leave()
     }
     

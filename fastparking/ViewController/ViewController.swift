@@ -11,15 +11,16 @@ import MapKit
 
 class ViewController: UIViewController {
 
+    let dispatchGroup = DispatchGroup()
     
     @IBOutlet weak var mapView: MKMapView!
+
     var locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
     private var destination: MKPointAnnotation?
     private var currentRoute: MKRoute?
     
     var owners: [Owner] = []
-    
 //    func checkLocationAuthorizationStatus(){
 //        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
 //            mapView.showsUserLocation = true
@@ -32,7 +33,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         configureLocationServices()
+        
+        dispatchGroup.enter()
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
+        
+        dispatchGroup.notify(queue: .main) {
+            print("OWNERS2: ",self.owners) // control error
+            self.createAnnotations()
+        }
+        
         //        let peru = Place(title: "Peru", coordinate: CLLocationCoordinate2D(latitude: 48, longitude: 2), info:  "Futuro peru")
         //        let chile = Place(title: "Chile", coordinate: CLLocationCoordinate2D(latitude: 41, longitude: 12), info:  "Chile")
         
@@ -47,14 +56,18 @@ class ViewController: UIViewController {
     func responseHandler(data:OwnerResponse) {
         if data.owners != nil {
             self.owners = data.owners!
+//            print("OWNERS: ",self.owners)
+            dispatchGroup.leave()
         } else {
             print("No data or problems with responseHandler function")
+            dispatchGroup.leave()
         }
     }
     
     func errorHandler(error:Error) {
         let message="Error on sources request: \(error.localizedDescription)"
         print(message)
+        dispatchGroup.leave()
     }
     
     private func configureLocationServices() {
@@ -81,7 +94,7 @@ class ViewController: UIViewController {
     private func createAnnotations() {
         var ownersAnnotations: [MKPointAnnotation] = []
         for owner in owners {
-            var newAnnotation = MKPointAnnotation()
+            let newAnnotation = MKPointAnnotation()
             if let fullname = owner.fullName, let lon = owner.longitude, let lat = owner.latitude {
                 newAnnotation.title = fullname
                 newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
@@ -122,7 +135,6 @@ extension ViewController : CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("status changed")
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             beginLocationUpdates(locationManager: manager)
         }
