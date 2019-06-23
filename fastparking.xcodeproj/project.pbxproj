@@ -32,6 +32,7 @@
 		2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */; };
 		2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */; };
 		2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */; };
+		2CECA6E022BF4EE100BC1829 /* reservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */; };
 		40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC4A228DB5A90099378D /* AppDelegate.swift */; };
 		40C4AC50228DB5A90099378D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC4E228DB5A90099378D /* Main.storyboard */; };
 		40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC51228DB5A90099378D /* fastparking.xcdatamodeld */; };
@@ -65,6 +66,7 @@
 		2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerResponse.swift; sourceTree = "<group>"; };
 		2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
 		2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reservationViewController.swift; sourceTree = "<group>"; };
 		40C4AC47228DB5A90099378D /* fastparking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastparking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4AC4A228DB5A90099378D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C4AC4F228DB5A90099378D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				2C439AB322B158EB0005E837 /* CreateOwnerViewController.swift */,
 				2C439AB722B187C50005E837 /* RegisterCustomerViewController.swift */,
 				2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */,
+				2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
 				2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */,
 				2C439AB422B158EB0005E837 /* CreateOwnerViewController.swift in Sources */,
+				2CECA6E022BF4EE100BC1829 /* reservationViewController.swift in Sources */,
 				2C439ABE22B18D530005E837 /* Customer.swift in Sources */,
 				2C439AB822B187C50005E837 /* RegisterCustomerViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,

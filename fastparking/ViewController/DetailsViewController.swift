@@ -16,7 +16,6 @@ class DetailsViewController: UIViewController {
     private var destination: MKPointAnnotation?
     private var currentRoute: MKRoute?
     
-    
     @IBOutlet weak var mapView: MKMapView!
     private let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
@@ -27,12 +26,11 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var timeToLabel: UILabel!
     @IBOutlet weak var farFromLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mapView.delegate = self
-        
         configureLocationServices()
         dispatchGroup.enter()
         loadComponents()
@@ -40,19 +38,18 @@ class DetailsViewController: UIViewController {
     }
     
     func loadComponents() {
-        
-        if object != nil {
-            if let urlImage = self.object!.imageUrl {
-                mainImageView.setImageFrom(urlString: urlImage, withDefaultNamed: "no-available", withErrorNamed: "no-available")
-            }
-            if let description = self.object!.description {
-                descriptionLabel.text = description
-            }
-            priceLabel.text = "$12 x hora"
-            timeToLabel.text = "36 min."
-            farFromLabel.text = "12 Km."
-            ratingLabel.text = "5"
+        if let name = object?.fullName {self.title = name}
+        if let image = object?.imageUrl {
+            mainImageView.setImageFrom(urlString: image, withDefaultNamed: "no-available", withErrorNamed: "no-available")
         }
+        if let description = object?.description {
+            descriptionLabel.text = description
+        }
+        if let address = object?.address {addressLabel.text = address}
+        priceLabel.text = "$12"
+        if let duration = object?.duration {timeToLabel.text = duration}
+        if let distance = object?.distance {farFromLabel.text = distance}
+        if let rating = object?.rating {ratingLabel.text = String(rating)}
         dispatchGroup.leave()
     }
     

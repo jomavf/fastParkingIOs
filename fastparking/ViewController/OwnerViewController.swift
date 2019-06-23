@@ -14,7 +14,9 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     var owners: [Owner] = []
     var index = 0
     
+//    @IBOutlet weak var colView: UICollectionView!
     @IBOutlet weak var colView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
