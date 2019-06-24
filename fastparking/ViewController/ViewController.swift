@@ -12,6 +12,7 @@ import MapKit
 class ViewController: UIViewController {
 
     let dispatchGroup = DispatchGroup()
+    var index:Int?
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -31,6 +32,28 @@ class ViewController: UIViewController {
         dispatchGroup.notify(queue: .main) {
             self.createAnnotations()
         }
+    }
+    
+    func getOwner(_ id:Int)->Owner{
+        var choosen:Owner?
+        for owner in self.owners {
+            if(owner.id == id){
+                choosen = owner
+            }
+        }
+        
+        return choosen!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Executing prepare for")
+        let vc = segue.destination as? DetailsViewController
+        if vc != nil {
+            guard let index = self.index else {return print("No index set")}
+            let owner = self.getOwner(index)
+            vc!.object = owner
+        }
+        
     }
     
     func responseHandler(data:OwnerResponse) {
@@ -76,6 +99,7 @@ class ViewController: UIViewController {
             let newAnnotation = MKPointAnnotation()
             if let fullname = owner.fullName, let lon = owner.longitude, let lat = owner.latitude {
                 newAnnotation.title = fullname
+                newAnnotation.subtitle = String(owner.id)
                 newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                 ownersAnnotations.append(newAnnotation)
             } else {
@@ -116,11 +140,12 @@ extension ViewController : MKMapViewDelegate {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
         
-        annotationView?.image = UIImage(named: "spot")
-        let infoButton = UIButton(type: .detailDisclosure)
-        annotationView?.rightCalloutAccessoryView = infoButton
-        
-        if annotation === mapView.userLocation {
+        if annotation !== mapView.userLocation {
+            annotationView?.image = UIImage(named: "spot")
+            let infoButton = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = infoButton
+
+        } else {
             annotationView?.image = UIImage(named: "car")
         }
         
@@ -128,12 +153,30 @@ extension ViewController : MKMapViewDelegate {
         return annotationView
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("1")
+        guard let annotation = view.annotation else {return}
+        print("2")
+//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        let id  =  annotation.subtitle!
+        self.index = Int(id!)
         
-        guard let place = view.annotation as? Place else {return}
-        let placeTitle = place.title
-        let placeInfo = place.info
-        let alert = UIAlertController(title: placeTitle, message: placeInfo, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToFuckingDetails", sender: self)
+        
+        
+        // anterior si funcionaba
+//        if let _ = self.index {
+//            if let detailsViewController = (mainStoryBoard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController) {
+//                detailsViewController.object = self.getOwner(self.index!)
+//                let navController = UINavigationController(rootViewController: detailsViewController)
+//
+//            navController.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+//
+//
+//
+//                self.present(navController, animated: true, completion: nil)
+//            }
+//        }
     }
+    
 }
