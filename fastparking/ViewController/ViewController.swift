@@ -17,17 +17,8 @@ class ViewController: UIViewController {
 
     var locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
-    private var destination: MKPointAnnotation?
-    private var currentRoute: MKRoute?
     
     var owners: [Owner] = []
-//    func checkLocationAuthorizationStatus(){
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//            mapView.showsUserLocation = true
-//        } else {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +29,13 @@ class ViewController: UIViewController {
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
         
         dispatchGroup.notify(queue: .main) {
-            print("OWNERS2: ",self.owners) // control error
             self.createAnnotations()
         }
-        
-        //        let peru = Place(title: "Peru", coordinate: CLLocationCoordinate2D(latitude: 48, longitude: 2), info:  "Futuro peru")
-        //        let chile = Place(title: "Chile", coordinate: CLLocationCoordinate2D(latitude: 41, longitude: 12), info:  "Chile")
-        
-        //        mapView.addAnnotations([peru,chile])
-        //        mapView.showAnnotations(mapView.annotations, animated: true)
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func responseHandler(data:OwnerResponse) {
         if data.owners != nil {
             self.owners = data.owners!
-//            print("OWNERS: ",self.owners)
             dispatchGroup.leave()
         } else {
             print("No data or problems with responseHandler function")
@@ -100,20 +79,9 @@ class ViewController: UIViewController {
                 newAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                 ownersAnnotations.append(newAnnotation)
             } else {
-                print("skipped")
+                print("ZetaGH ERROR: Some owner has no lat no log or no fullname")
             }
         }
-//        let garageAnnotation = MKPointAnnotation()
-//        guard let longitude = object?.longitude, let latitude = object?.latitude, let fullname = object?.fullName, let description = object?.description else {
-//            print("No longitude latitude o objectOwner en owner details")
-//            return
-//        }
-//        let ownerCoordinate = CLLocationCoordinate2D(latitude: latitude,longitude: longitude)
-//        garageAnnotation.coordinate = ownerCoordinate
-//        garageAnnotation.title = fullname
-//        garageAnnotation.subtitle = description
-//
-//        destination = garageAnnotation
         for annotation in ownersAnnotations {
             mapView.addAnnotation(annotation)
         }
@@ -127,8 +95,6 @@ extension ViewController : CLLocationManagerDelegate {
 
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
-//            createAnnotations()
-//            contructRoute(userLocation: latestLocation.coordinate)
         }
 
         currentCoordinate = latestLocation.coordinate
@@ -140,41 +106,34 @@ extension ViewController : CLLocationManagerDelegate {
         }
     }
 }
-//extension ViewController : MKMapViewDelegate {
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard annotation is Place else { return nil }
-//        let identifier = "Place"
-//        var annotationView  = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-//        if annotationView == nil {
-//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView?.canShowCallout = true
-//            let infoButton = UIButton(type: .detailDisclosure)
-//            annotationView?.rightCalloutAccessoryView = infoButton
-//        } else {
-//            annotationView?.annotation = annotation
-//        }
-//        return annotationView
-//    }
-//
-//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-//        guard let place = view.annotation as? Place else {return}
-//        let placeTitle = place.title
-//        let placeInfo = place.info
-//        let alert = UIAlertController(title: placeTitle, message: placeInfo, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//    }
-//
-//}
 
 extension ViewController : MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        guard let currentRoute = currentRoute else {
-            return MKOverlayRenderer()
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        
+        if ( annotationView == nil ) {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
-        let polyLineRenderer = MKPolylineRenderer(polyline: currentRoute.polyline)
-        polyLineRenderer.strokeColor = UIColor.blue
-        polyLineRenderer.lineWidth = 5
-        return polyLineRenderer
+        
+        annotationView?.image = UIImage(named: "spot")
+        let infoButton = UIButton(type: .detailDisclosure)
+        annotationView?.rightCalloutAccessoryView = infoButton
+        
+        if annotation === mapView.userLocation {
+            annotationView?.image = UIImage(named: "car")
+        }
+        
+        annotationView?.canShowCallout = true
+        return annotationView
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        guard let place = view.annotation as? Place else {return}
+        let placeTitle = place.title
+        let placeInfo = place.info
+        let alert = UIAlertController(title: placeTitle, message: placeInfo, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
