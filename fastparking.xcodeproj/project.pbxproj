@@ -26,12 +26,20 @@
 		2C439AC622B196BB0005E837 /* SlotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC522B196BB0005E837 /* SlotResponse.swift */; };
 		2C439AC822B196CC0005E837 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439AC722B196CC0005E837 /* Slot.swift */; };
 		2C439ACB22B1B7110005E837 /* SettingsOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */; };
+		2C9711E422C1F19800A1957B /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9711E322C1F19800A1957B /* Users+CoreDataProperties.swift */; };
+		2C9711E522C1F19800A1957B /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9711E222C1F19800A1957B /* Users+CoreDataClass.swift */; };
+		2C9711E922C2907700A1957B /* ReservationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9711E822C2907700A1957B /* ReservationCollectionViewCell.swift */; };
+		2C9711EB22C290CA00A1957B /* ListReservationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9711EA22C290CA00A1957B /* ListReservationCollectionViewController.swift */; };
 		2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */; };
 		2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D672294A52900D7E9A8 /* Owner.swift */; };
 		2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6A2294A90E00D7E9A8 /* data.swift */; };
 		2CA65D6E2294AD0500D7E9A8 /* OwnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */; };
 		2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */; };
 		2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */; };
+		2CB9970D22C4A212007021A8 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9970B22C4A211007021A8 /* SettingsCell.swift */; };
+		2CB9970E22C4A212007021A8 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9970C22C4A211007021A8 /* UserInfoHeader.swift */; };
+		2CB9971022C4A71E007021A8 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9970F22C4A71E007021A8 /* SettingsSection.swift */; };
+		2CB9971222C4DBDC007021A8 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */; };
 		2CECA6E022BF4EE100BC1829 /* reservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */; };
 		40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC4A228DB5A90099378D /* AppDelegate.swift */; };
 		40C4AC50228DB5A90099378D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC4E228DB5A90099378D /* Main.storyboard */; };
@@ -60,12 +68,20 @@
 		2C439AC522B196BB0005E837 /* SlotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotResponse.swift; sourceTree = "<group>"; };
 		2C439AC722B196CC0005E837 /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOwnerViewController.swift; sourceTree = "<group>"; };
+		2C9711E222C1F19800A1957B /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Users+CoreDataClass.swift"; path = "/Users/veliz/Development/workspace-vscode-macbookpro/workspace-201901/workspace-moviles/fastparking/fastparking/Model/Users+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		2C9711E322C1F19800A1957B /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Users+CoreDataProperties.swift"; path = "/Users/veliz/Development/workspace-vscode-macbookpro/workspace-201901/workspace-moviles/fastparking/fastparking/Model/Users+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		2C9711E822C2907700A1957B /* ReservationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C9711EA22C290CA00A1957B /* ListReservationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReservationCollectionViewController.swift; sourceTree = "<group>"; };
 		2CA65D6022947AE000D7E9A8 /* OwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA65D672294A52900D7E9A8 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		2CA65D6A2294A90E00D7E9A8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		2CA65D6D2294AD0500D7E9A8 /* OwnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerResponse.swift; sourceTree = "<group>"; };
 		2CA65D722295A21B00D7E9A8 /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
 		2CA65D762295EC5000D7E9A8 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		2CB9970B22C4A211007021A8 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		2CB9970C22C4A211007021A8 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		2CB9970F22C4A71E007021A8 /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reservationViewController.swift; sourceTree = "<group>"; };
 		40C4AC47228DB5A90099378D /* fastparking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastparking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4AC4A228DB5A90099378D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +126,9 @@
 		2CA65D6C2294ACE800D7E9A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CB9970F22C4A71E007021A8 /* SettingsSection.swift */,
+				2C9711E222C1F19800A1957B /* Users+CoreDataClass.swift */,
+				2C9711E322C1F19800A1957B /* Users+CoreDataProperties.swift */,
 				2C1495D422A97D3D0001B942 /* Place.swift */,
 				40C4AC51228DB5A90099378D /* fastparking.xcdatamodeld */,
 				2CA65D672294A52900D7E9A8 /* Owner.swift */,
@@ -140,6 +159,9 @@
 				2C439AB722B187C50005E837 /* RegisterCustomerViewController.swift */,
 				2C439ACA22B1B7110005E837 /* SettingsOwnerViewController.swift */,
 				2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */,
+				2C9711E822C2907700A1957B /* ReservationCollectionViewCell.swift */,
+				2C9711EA22C290CA00A1957B /* ListReservationCollectionViewController.swift */,
+				2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -160,6 +182,15 @@
 				40C4AC4A228DB5A90099378D /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		2CB9970A22C4A1F3007021A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CB9970B22C4A211007021A8 /* SettingsCell.swift */,
+				2CB9970C22C4A211007021A8 /* UserInfoHeader.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		40C4AC3E228DB5A90099378D = {
@@ -183,6 +214,7 @@
 		40C4AC49228DB5A90099378D /* fastparking */ = {
 			isa = PBXGroup;
 			children = (
+				2CB9970A22C4A1F3007021A8 /* View */,
 				2C1495D722AA25060001B942 /* Networking */,
 				2CA65D712294ADD700D7E9A8 /* Main */,
 				2CA65D702294ADB200D7E9A8 /* Resource */,
@@ -333,11 +365,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C439AC422B195A10005E837 /* Reservation.swift in Sources */,
+				2C9711E422C1F19800A1957B /* Users+CoreDataProperties.swift in Sources */,
 				2C439ACB22B1B7110005E837 /* SettingsOwnerViewController.swift in Sources */,
+				2CB9971022C4A71E007021A8 /* SettingsSection.swift in Sources */,
+				2CB9970E22C4A212007021A8 /* UserInfoHeader.swift in Sources */,
 				2C1495DB22AADD3C0001B942 /* LoginViewController.swift in Sources */,
 				2C439AC222B194FE0005E837 /* ReservationResponse.swift in Sources */,
 				2C439AC622B196BB0005E837 /* SlotResponse.swift in Sources */,
 				40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */,
+				2C9711E922C2907700A1957B /* ReservationCollectionViewCell.swift in Sources */,
 				2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */,
 				2C439AB622B1619E0005E837 /* PostOwnerResponse.swift in Sources */,
 				2C439AC822B196CC0005E837 /* Slot.swift in Sources */,
@@ -345,13 +381,17 @@
 				2C1495D222A97A3C0001B942 /* ViewController.swift in Sources */,
 				2CA65D682294A52900D7E9A8 /* Owner.swift in Sources */,
 				2C149BBB22AB5D230023A483 /* LoginResponse.swift in Sources */,
+				2C9711E522C1F19800A1957B /* Users+CoreDataClass.swift in Sources */,
 				2C149BBF22ABAE050023A483 /* SettingsViewController.swift in Sources */,
 				2CA65D6122947AE000D7E9A8 /* OwnerCollectionViewCell.swift in Sources */,
 				2C439AC022B18D8E0005E837 /* CustomerResponse.swift in Sources */,
+				2CB9971222C4DBDC007021A8 /* CongratsViewController.swift in Sources */,
+				2C9711EB22C290CA00A1957B /* ListReservationCollectionViewController.swift in Sources */,
 				2CA65D732295A21B00D7E9A8 /* OwnerViewController.swift in Sources */,
 				2C149BC122AC5B8D0023A483 /* DetailsViewController.swift in Sources */,
 				2C439AB422B158EB0005E837 /* CreateOwnerViewController.swift in Sources */,
 				2CECA6E022BF4EE100BC1829 /* reservationViewController.swift in Sources */,
+				2CB9970D22C4A212007021A8 /* SettingsCell.swift in Sources */,
 				2C439ABE22B18D530005E837 /* Customer.swift in Sources */,
 				2C439AB822B187C50005E837 /* RegisterCustomerViewController.swift in Sources */,
 				2CA65D772295EC5000D7E9A8 /* UIImageViewExtension.swift in Sources */,
@@ -507,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54VRXN49RZ;
 				INFOPLIST_FILE = fastparking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54VRXN49RZ;
 				INFOPLIST_FILE = fastparking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

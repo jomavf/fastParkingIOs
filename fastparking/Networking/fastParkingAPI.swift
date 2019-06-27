@@ -16,6 +16,11 @@ class fastParkingAPI {
     static let loginUrl = "\(baseUrl)/login/authenticate"
     static let ownerUrlPost = "\(baseUrl)/owners"
     static let customerUrl = "\(baseUrl)/customers"
+    static var reservationUrl:String?
+    
+    static func createReservationUrl(_ id:Int) -> String{
+        return "\(fastParkingAPI.baseUrl)/customers/\(id)/reservations"
+    }
     
     static private func get<T:Decodable>(
         urlString:String,
@@ -58,6 +63,7 @@ class fastParkingAPI {
             return
         }
         AF.request(url,method: .post,parameters:parameters).responseJSON { (response) in
+            print("response :",response)
             switch response.result {
             case .success(_):
                 do {
@@ -91,5 +97,23 @@ class fastParkingAPI {
         self.post(urlString: customerUrl, parameters: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
+    static func getReservation(reservationId id:Int?,responseHandler: @escaping (ReservationResponse)->Void,errorHandler: @escaping (Error)->Void){
+        let parameter = ["":""]
+        if let id = id {
+            let url = fastParkingAPI.createReservationUrl(id)
+            self.get(urlString: url, parameters:parameter, responseHandler: responseHandler, errorHandler: errorHandler)
+        } else {
+            print("Reservation url not working")
+        }
+    }
+    
+    static func postReservation(reservationId id:Int?,parameter:[String:Any], responseHandler: @escaping (ReservationResponse)->Void,errorHandler: @escaping (Error)->Void){
+        if let id = id {
+            let url = fastParkingAPI.createReservationUrl(id)
+            self.post(urlString: String(url), parameters: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
+        } else {
+            print("Reservation url not working")
+        }
+    }
 }
 

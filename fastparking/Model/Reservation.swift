@@ -10,7 +10,6 @@ import Foundation
 
 struct Reservation: Codable {
     var id:Int
-    var slotId:Int?
     var customerId:Int?
     var ownerId:Int?
     var startReservationDate:String?
@@ -18,8 +17,6 @@ struct Reservation: Codable {
     var isActive: Bool?
     var rating:Int?
     var activeField: Bool?
-    
-    var slot: Slot?
     var customer:Customer?
     var owner:Owner?
 }

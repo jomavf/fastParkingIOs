@@ -10,16 +10,23 @@ import UIKit
 
 class reservationViewController: UIViewController {
 
+    var object: Owner?
+    
     @IBOutlet weak var startDateTimeInput: UITextField!
     @IBOutlet weak var endDateTimeInput: UITextField!
     
     private var startDatePicker: UIDatePicker?
     private var endDatePicker: UIDatePicker?
+    @IBOutlet weak var priceLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // some change
+        
+        if let price = object?.price {
+            priceLabel.text = "$FPP \(price)"
+        }
         startDatePicker = UIDatePicker()
         endDatePicker = UIDatePicker()
         
@@ -39,6 +46,48 @@ class reservationViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? CongratsViewController
+        if vc != nil {
+            let owner = object
+            vc!.object = owner
+        }
+    }
+    
+    @IBAction func buyButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // create context
+        let context = appDelegate.persistentContainer.viewContext
+        // create an entity and records
+        guard let users = try! context.fetch(Users.fetchRequest()) as? [Users] else {return}
+        print("Mi user: ", users[0].firstName!)// aqui el usuario supuestamente deberia estar
+        // Aqui hacer la logica para restar puntos etc ya tengo el usuario arriba
+        let id = Int(users[0].id)
+        guard let owner = object else {return}
+        let startDate = startDateTimeInput.text
+        let endDate = endDateTimeInput.text
+        let parameter = ["CustomerId":Int(id),"OwnerId":Int(owner.id),"StartReservationDate":startDate!,"EndReservationDate":endDate!] as [String : Any]
+        print("URL: " ,fastParkingAPI.createReservationUrl(id))
+        print("PARAMETERS: ",parameter)
+        fastParkingAPI.postReservation(reservationId: id, parameter: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
+        
+        //goTo
+        self.performSegue(withIdentifier: "goToFinal", sender: self)
+    }
+    
+    func responseHandler(data:ReservationResponse) {
+        if data != nil {
+            print("success")
+            print(data)
+        }
+    }
+    
+    func errorHandler(error:Error) {
+        print("ERROR IN",error)
+    }
+    
+    
     
     @objc func viewTapped(gestureRecognised:UITapGestureRecognizer){
         view.endEditing(true)

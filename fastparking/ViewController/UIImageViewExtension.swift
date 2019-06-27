@@ -13,8 +13,8 @@ extension UIImageView{
     func setImageFrom(urlString: String, withDefaultNamed defaultName: String?,
                       withErrorNamed errorImage: String?){
         guard let url = URL(string: urlString)else{
-            _="Error while creating URL, default image assigned"
-            //print(message)
+            let message="Error while creating URL, default image assigned"
+            print(message)
             DispatchQueue.main.async {
                 if let name=defaultName{
                     self.image=UIImage(named: name)
@@ -30,8 +30,8 @@ extension UIImageView{
                 let data=data,
                 error==nil,
                 let image=UIImage(data: data)else{
-                    _="Error while requesting image, error image assigned"
-                    //print(message )
+                    let message="Error while requesting image, error image assigned \(url)"
+                    print(message )
                     DispatchQueue.main.async {
                         if let name=errorImage{
                             self.image=UIImage(named: name)
@@ -41,8 +41,8 @@ extension UIImageView{
             }
             DispatchQueue.main.async {
                 self.image=image
-                _="Succesful request, image assigned"
-                //print(message)
+                let message="Succesful request, image assigned"
+                print(message)
             }
             }.resume()
     }

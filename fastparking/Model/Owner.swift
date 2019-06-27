@@ -25,6 +25,7 @@ struct Owner:Codable {
     var duration:String?
     var rating:Float?
     var imageUrl:String?
+    var price:Double?
     
 //    {
 //        "id": 35,

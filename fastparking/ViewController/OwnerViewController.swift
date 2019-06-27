@@ -13,25 +13,38 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     var dispatchGroup = DispatchGroup()
     
-    var owners: [Owner] = []
-    var index = 0
-    var loading:Bool = false
+    var owners: [Owner] = [Owner]()
     
+    var currentRow = 0
+    
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var colView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("executing viewDidLoad")
         colView.delegate = self
         colView.dataSource = self
-        
-        loading = true
-        
         dispatchGroup.enter()
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
-        
         dispatchGroup.notify(queue: .main) {
-            self.loading = false
-            self.colView.reloadData()
+            self.loading.stopAnimating()
+            self.loading.isHidden = true
+            self.colView.isHidden = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("executing viewWillAppear")
+        loading.startAnimating()
+        loading.isHidden = false
+        colView.isHidden = true
+        
+        if owners.count > 0 {
+            self.colView.reloadItems(at: [IndexPath(item: currentRow, section: 0)])
+            self.loading.stopAnimating()
+            self.loading.isHidden = true
+            self.colView.isHidden = false
         }
     }
     
@@ -55,9 +68,8 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? DetailsViewController
         if vc != nil {
-            vc!.object = self.owners[index]
+            vc!.object = self.owners[currentRow]
         }
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -69,12 +81,14 @@ class OwnerViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as!OwnerCollectionViewCell
-        // Configure the cell
-        index = indexPath.row
-        let selectedOwner = owners[index]
-        cell.update(owner: selectedOwner )
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LocalCell", for: indexPath) as!OwnerCollectionViewCell
+        cell.update(owner: owners[indexPath.row] )
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentRow = indexPath.item
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
 
 }

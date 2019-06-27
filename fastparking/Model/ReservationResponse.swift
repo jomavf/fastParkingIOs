@@ -10,7 +10,8 @@ import Foundation
 
 struct ReservationResponse: Codable {
     var status:String?
-    var reservations:String?
     var code:Int?
+    var reservation:Reservation?
+    var reservations:[Reservation]?
     var totalResults:Int?
 }

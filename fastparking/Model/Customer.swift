@@ -20,4 +20,6 @@ struct Customer:Codable {
     var email: String?
     var password: String?
     var activeField: Bool?
+    var totalAmount: Int?
+    var balance: Int?
 }

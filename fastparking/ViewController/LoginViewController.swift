@@ -35,6 +35,8 @@ class LoginViewController: UIViewController {
         dispatchGroup.notify(queue: .main) {
             if self.isLogin() {
                 if self.isCustomer == true {
+                    //save user to core data
+                    
                     if let tabbar = (mainStoryBoard.instantiateViewController(withIdentifier: "tabbar") as? UITabBarController) {
                         self.present(tabbar, animated: true, completion: nil)
                     }
@@ -63,8 +65,56 @@ class LoginViewController: UIViewController {
     }
     
     func responseHandler(response: LoginResponse) {
-        if let _ = response.customer {
+        print("Entre al response handler")
+        if let customer = response.customer {
+            print("Entre aqui para guardar el usuario")
             isCustomer = true // es customer
+            // save to core data
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            // create context
+            let context = appDelegate.persistentContainer.viewContext
+            // create an entity and records
+            
+//            guard let users = try! context.fetch(Users.fetchRequest()) as? [Users] else {return}
+//            users.forEach { (user) in
+//                print("Mi usuario: ",user)
+//            }
+            
+            let user = Users(context: context)
+            user.id = Int16(customer.id)
+            user.firstName = customer.firstName
+            user.lastName = customer.lastName
+            user.address = customer.address
+            user.birthday = customer.birthday
+            user.dni = customer.dni
+            user.ruc = customer.ruc
+            user.fullName = customer.fullName
+            if let activeField = customer.activeField {user.activeField = activeField}
+            user.email = customer.email
+            user.password = customer.password
+            if let totalAmount = customer.totalAmount { user.totalAmount = Int32(totalAmount) }
+            if let balance = customer.balance { user.balance = Int32(balance) }
+
+            do {
+//                print("En teoria guarde \(user)")
+                try context.save()
+            } catch {
+                print("^^ Failed saving ^^")
+            }
+            
+//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+//            //request.predicate = NSPredicate(format: "age = %@", "12")
+//            request.returnsObjectsAsFaults = false
+//            do {
+//                let result = try context.fetch(request)
+//                for data in result as! [NSManagedObject] {
+//                    print(data.value(forKey: "username") as! String)
+//                }
+//
+//            } catch {
+//
+//                print("Failed")
+//            }
         }
         else {
             isCustomer = false // es owner

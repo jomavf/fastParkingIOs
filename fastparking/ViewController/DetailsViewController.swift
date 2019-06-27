@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class DetailsViewController: UIViewController {
-    let dispatchGroup = DispatchGroup()
+//    let dispatchGroup = DispatchGroup()
     var object: Owner?
     
     private var destination: MKPointAnnotation?
@@ -27,22 +27,35 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var farFromLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var fullname: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         configureLocationServices()
-        
         loadComponents()
-        dispatchGroup.notify(queue: .main){
-            // things we want to do next
-            // code should be HERE
+        print(object!)
+//        dispatchGroup.notify(queue: .main){
+//            // things we want to do next
+//            // code should be HERE
+//        }
+    }
+    @IBAction func reservationPressed(_ sender: Any) {
+        print("performing")
+        self.performSegue(withIdentifier: "goToBuy", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? reservationViewController
+        if vc != nil {
+            let owner = object
+            vc!.object = owner
         }
     }
     
     func loadComponents() {
-        dispatchGroup.enter()
-        if let name = object?.fullName {self.title = name}
+//        dispatchGroup.enter()
+//        if let name = object?.fullName {self.title = name}
         if let image = object?.imageUrl {
             mainImageView.setImageFrom(urlString: image, withDefaultNamed: "no-available", withErrorNamed: "no-available")
         }
@@ -50,11 +63,15 @@ class DetailsViewController: UIViewController {
             descriptionLabel.text = description
         }
         if let address = object?.address {addressLabel.text = address}
-        priceLabel.text = "$12"
+        if let price = object?.price { priceLabel.text = "$"+String(price) }
+//        priceLabel.text = "$\(String(object!.id))"
         if let duration = object?.duration {timeToLabel.text = duration}
         if let distance = object?.distance {farFromLabel.text = distance}
         if let rating = object?.rating {ratingLabel.text = String(rating)}
-        dispatchGroup.leave()
+        if let fullnames = object?.fullName {
+            fullname.text = fullnames
+        }
+//        dispatchGroup.leave()
     }
     
     private func configureLocationServices() {

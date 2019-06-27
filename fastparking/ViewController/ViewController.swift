@@ -15,17 +15,14 @@ class ViewController: UIViewController {
     var index:Int?
     
     @IBOutlet weak var mapView: MKMapView!
-
     var locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
-    
     var owners: [Owner] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         configureLocationServices()
-        
         dispatchGroup.enter()
         fastParkingAPI.getOwners(responseHandler: responseHandler, errorHandler: errorHandler)
         
@@ -41,7 +38,6 @@ class ViewController: UIViewController {
                 choosen = owner
             }
         }
-        
         return choosen!
     }
     
@@ -53,7 +49,6 @@ class ViewController: UIViewController {
             let owner = self.getOwner(index)
             vc!.object = owner
         }
-        
     }
     
     func responseHandler(data:OwnerResponse) {
@@ -109,7 +104,6 @@ class ViewController: UIViewController {
         for annotation in ownersAnnotations {
             mapView.addAnnotation(annotation)
         }
-        
     }
 
 }
@@ -123,7 +117,6 @@ extension ViewController : CLLocationManagerDelegate {
 
         currentCoordinate = latestLocation.coordinate
     }
-
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             beginLocationUpdates(locationManager: manager)
@@ -133,50 +126,38 @@ extension ViewController : CLLocationManagerDelegate {
 
 extension ViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-        
         if ( annotationView == nil ) {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
-        
         if annotation !== mapView.userLocation {
             annotationView?.image = UIImage(named: "spot")
             let infoButton = UIButton(type: .detailDisclosure)
             annotationView?.rightCalloutAccessoryView = infoButton
-
         } else {
             annotationView?.image = UIImage(named: "car")
         }
-        
         annotationView?.canShowCallout = true
         return annotationView
     }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        print("1")
         guard let annotation = view.annotation else {return}
-        print("2")
-//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        //let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
         let id  =  annotation.subtitle!
         self.index = Int(id!)
         
         self.performSegue(withIdentifier: "goToFuckingDetails", sender: self)
         
-        
         // anterior si funcionaba
-//        if let _ = self.index {
-//            if let detailsViewController = (mainStoryBoard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController) {
-//                detailsViewController.object = self.getOwner(self.index!)
-//                let navController = UINavigationController(rootViewController: detailsViewController)
-//
-//            navController.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
-//
-//
-//
-//                self.present(navController, animated: true, completion: nil)
-//            }
-//        }
+        //if let _ = self.index {
+        //if let detailsViewController = (mainStoryBoard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController) {
+        //detailsViewController.object = self.getOwner(self.index!)
+        //let navController = UINavigationController(rootViewController: detailsViewController)
+        //navController.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Map", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        //self.present(navController, animated: true, completion: nil)
+        //}
+        //}
     }
-    
 }
