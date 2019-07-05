@@ -40,6 +40,7 @@
 		2CB9970E22C4A212007021A8 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9970C22C4A211007021A8 /* UserInfoHeader.swift */; };
 		2CB9971022C4A71E007021A8 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9970F22C4A71E007021A8 /* SettingsSection.swift */; };
 		2CB9971222C4DBDC007021A8 /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */; };
+		2CB9971422C5005B007021A8 /* onBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9971322C5005B007021A8 /* onBoardingViewController.swift */; };
 		2CECA6E022BF4EE100BC1829 /* reservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */; };
 		40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4AC4A228DB5A90099378D /* AppDelegate.swift */; };
 		40C4AC50228DB5A90099378D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4AC4E228DB5A90099378D /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		2CB9970C22C4A211007021A8 /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 		2CB9970F22C4A71E007021A8 /* SettingsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
+		2CB9971322C5005B007021A8 /* onBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingViewController.swift; sourceTree = "<group>"; };
 		2CECA6DF22BF4EE100BC1829 /* reservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reservationViewController.swift; sourceTree = "<group>"; };
 		40C4AC47228DB5A90099378D /* fastparking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastparking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4AC4A228DB5A90099378D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				2C9711E822C2907700A1957B /* ReservationCollectionViewCell.swift */,
 				2C9711EA22C290CA00A1957B /* ListReservationCollectionViewController.swift */,
 				2CB9971122C4DBDC007021A8 /* CongratsViewController.swift */,
+				2CB9971322C5005B007021A8 /* onBoardingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				40C4AC53228DB5A90099378D /* fastparking.xcdatamodeld in Sources */,
 				2C9711E922C2907700A1957B /* ReservationCollectionViewCell.swift in Sources */,
 				2CA65D6B2294A90E00D7E9A8 /* data.swift in Sources */,
+				2CB9971422C5005B007021A8 /* onBoardingViewController.swift in Sources */,
 				2C439AB622B1619E0005E837 /* PostOwnerResponse.swift in Sources */,
 				2C439AC822B196CC0005E837 /* Slot.swift in Sources */,
 				40C4AC4B228DB5A90099378D /* AppDelegate.swift in Sources */,

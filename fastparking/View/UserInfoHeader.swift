@@ -9,7 +9,7 @@
 import UIKit
 
 class UserInfoHeader: UIView {
-    
+    var user:Users?
     // MARK: - Properties
     
     let profileImageView: UIImageView = {
@@ -17,21 +17,47 @@ class UserInfoHeader: UIView {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "ironman")
+        iv.image = UIImage(named: "avatar48")
         return iv
     }()
     
     let usernameLabel: UILabel = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // create context
+        let context = appDelegate.persistentContainer.viewContext
+        // create an entity and records
+        var name = ""
+        var user:Users
+        if let users = try! context.fetch(Users.fetchRequest()) as? [Users] {
+            user = users.last!
+            if let firstname = user.firstName {
+                name = firstname
+            }
+        }
+        
         let label = UILabel()
-        label.text = "Tony Stark"
+        label.text = name
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let emailLabel: UILabel = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // create context
+        let context = appDelegate.persistentContainer.viewContext
+        // create an entity and records
+        var email = ""
+        var user:Users
+        if let users = try! context.fetch(Users.fetchRequest()) as? [Users] {
+            user = users.last!
+            if let emailUser = user.email {
+                email = emailUser
+            }
+        }
+        
         let label = UILabel()
-        label.text = "tony.stark@gmail.com"
+        label.text = email
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false

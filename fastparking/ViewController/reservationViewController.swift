@@ -11,40 +11,84 @@ import UIKit
 class reservationViewController: UIViewController {
 
     var object: Owner?
+    var user:Users?
     
     @IBOutlet weak var startDateTimeInput: UITextField!
     @IBOutlet weak var endDateTimeInput: UITextField!
     
+    @IBOutlet weak var cost: UILabel!
     private var startDatePicker: UIDatePicker?
     private var endDatePicker: UIDatePicker?
     @IBOutlet weak var priceLabel: UILabel!
+    var finalPrice:Double = 0
+    var dispatchGroup = DispatchGroup()
     
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        // create context
+//        let context = appDelegate.persistentContainer.viewContext
+//        // create an entity and records
+//
+//        if let users = try! context.fetch(Users.fetchRequest()) as? [Users] {
+//            user = users.last!
+//        }
+//        print("Mi ultimo usuario es: ",user!.email!,user!.password!)
+//        let parameters = ["Email":user!.email!,"Password":user!.password!]
+//        dispatchGroup.enter()
+//        fastParkingAPI.loginRequest(parameter: parameters, responseHandler: responseHandler2, errorHandler: errorHandler2)
+//
+//        cost.text = "Costo $FPP 0"
+//    }
+    func responseHandler2(response: LoginResponse) {
+        if response != nil {
+            print("el response que hago ni bien entra la funcion ->",response)
+            user?.totalAmount = Int32(response.customer!.totalAmount!)
+            dispatchGroup.leave()
+        }
+    }
+    func errorHandler2(error:Error){
+        print("Error requiesting login: ",error)
+        dispatchGroup.leave()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // some change
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        // create context
+        let context = appDelegate.persistentContainer.viewContext
+        // create an entity and records
         
-        if let price = object?.price {
-            priceLabel.text = "$FPP \(price)"
+        if let users = try! context.fetch(Users.fetchRequest()) as? [Users] {
+            user = users.last!
         }
-        startDatePicker = UIDatePicker()
-        endDatePicker = UIDatePicker()
-        
-        startDatePicker?.datePickerMode = .dateAndTime
-        startDatePicker?.addTarget(self, action: #selector(reservationViewController.startDateChanged(startDatePicker:)), for: .valueChanged)
-        
-        endDatePicker?.datePickerMode = .dateAndTime
-        endDatePicker?.addTarget(self, action: #selector(reservationViewController.endDateChanged(endDatePicker:)), for: .valueChanged)
-        
-        
-        startDateTimeInput.inputView = startDatePicker
-        endDateTimeInput.inputView = endDatePicker
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reservationViewController.viewTapped(gestureRecognised:)))
-
-        view.addGestureRecognizer(tapGesture)
-        
-        // Do any additional setup after loading the view.
+        print("Mi ultimo usuario es: ","vf@gmail.com","123456")
+        let parameters = ["Email":"vf@gmail.com","Password":"123456"]
+        dispatchGroup.enter()
+        fastParkingAPI.loginRequest(parameter: parameters, responseHandler: responseHandler2, errorHandler: errorHandler2)
+        // some change
+        dispatchGroup.notify(queue: .main) {
+            self.cost.text = "Costo $FPP 0"
+            if let price = self.object?.price {
+                self.finalPrice = price
+                self.priceLabel.text = "$FPP \(self.user!.totalAmount)"
+            }
+            self.startDatePicker = UIDatePicker()
+            self.endDatePicker = UIDatePicker()
+            
+            self.startDatePicker?.datePickerMode = .dateAndTime
+            self.startDatePicker?.addTarget(self, action: #selector(reservationViewController.startDateChanged(startDatePicker:)), for: .valueChanged)
+            
+            self.endDatePicker?.datePickerMode = .dateAndTime
+            self.endDatePicker?.addTarget(self, action: #selector(reservationViewController.endDateChanged(endDatePicker:)), for: .valueChanged)
+            
+            
+            self.startDateTimeInput.inputView = self.startDatePicker
+            self.endDateTimeInput.inputView = self.endDatePicker
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reservationViewController.viewTapped(gestureRecognised:)))
+            
+            self.view.addGestureRecognizer(tapGesture)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,13 +105,14 @@ class reservationViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         // create an entity and records
         guard let users = try! context.fetch(Users.fetchRequest()) as? [Users] else {return}
-        print("Mi user: ", users[0].firstName!)// aqui el usuario supuestamente deberia estar
         // Aqui hacer la logica para restar puntos etc ya tengo el usuario arriba
-        let id = Int(users[0].id)
+        let user = users[0]
+        let id = Int(user.id)
         guard let owner = object else {return}
         let startDate = startDateTimeInput.text
         let endDate = endDateTimeInput.text
-        let parameter = ["CustomerId":Int(id),"OwnerId":Int(owner.id),"StartReservationDate":startDate!,"EndReservationDate":endDate!] as [String : Any]
+        
+        let parameter = ["CustomerId":Int(id),"OwnerId":Int(owner.id),"StartReservationDate":startDate!,"EndReservationDate":endDate!,"Price":finalPrice] as [String : Any]
         print("URL: " ,fastParkingAPI.createReservationUrl(id))
         print("PARAMETERS: ",parameter)
         fastParkingAPI.postReservation(reservationId: id, parameter: parameter, responseHandler: responseHandler, errorHandler: errorHandler)
@@ -105,6 +150,7 @@ class reservationViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         endDateTimeInput.text = dateFormatter.string(from: endDatePicker.date)
         view.endEditing(true)
+        cost.text = "Costo: $FPP \(finalPrice)"
     }
 
     /*

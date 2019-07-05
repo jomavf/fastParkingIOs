@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
                 if self.isCustomer == true {
                     //save user to core data
                     
-                    if let tabbar = (mainStoryBoard.instantiateViewController(withIdentifier: "tabbar") as? UITabBarController) {
+                    if let tabbar = (mainStoryBoard.instantiateViewController(withIdentifier: "onBoarding") as? onBoardingViewController) {
                         self.present(tabbar, animated: true, completion: nil)
                     }
                 } else {
